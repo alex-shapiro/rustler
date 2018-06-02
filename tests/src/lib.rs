@@ -6,6 +6,8 @@ extern crate rustler_codegen;
 #[macro_use]
 extern crate lazy_static;
 
+extern crate chrono;
+
 use rustler::{Env, Term};
 use rustler::schedule::SchedulerFlags;
 
@@ -20,6 +22,7 @@ mod test_env;
 mod test_codegen;
 mod test_term;
 mod test_dirty;
+mod test_datetime;
 
 rustler_export_nifs!(
     "Elixir.RustlerTest",
@@ -71,6 +74,8 @@ rustler_export_nifs!(
 
         ("dirty_cpu", 0, test_dirty::dirty_cpu, SchedulerFlags::DirtyCpu),
         ("dirty_io", 0, test_dirty::dirty_io, SchedulerFlags::DirtyIo),
+
+        ("datetime_echo", 1, test_datetime::datetime_echo),
     ],
     Some(on_load)
 );

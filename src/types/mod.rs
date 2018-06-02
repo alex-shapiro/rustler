@@ -27,6 +27,9 @@ pub use types::pid::Pid;
 
 pub mod elixir_struct;
 
+#[cfg(feature = "chrono")]
+pub mod datetime;
+
 pub trait Encoder {
     fn encode<'a>(&self, env: Env<'a>) -> Term<'a>;
 }

@@ -56,4 +56,6 @@ defmodule RustlerTest do
 
   def dirty_io(), do: err()
   def dirty_cpu(), do: err()
+
+  def datetime_echo(_), do: err()
 end

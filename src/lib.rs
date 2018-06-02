@@ -57,3 +57,6 @@ mod export;
 pub use error::Error;
 
 pub type NifResult<T> = Result<T, Error>;
+
+#[cfg(feature = "chrono")]
+extern crate chrono;
